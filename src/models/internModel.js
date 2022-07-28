@@ -2,11 +2,6 @@ const mongoose = require("mongoose")
 const moment = require("moment")
 const ObjectId = mongoose.Schema.Types.ObjectId
 
-
-// let date = moment().format('DD/MM/YYYY');
-// console.log(date)
-
-
 const internSchema = new mongoose.Schema({
 
 
@@ -28,9 +23,7 @@ const internSchema = new mongoose.Schema({
         },
         required: [true, "Email address is required"]
     },
-    // /^(\+\d{1,3}[- ]?)?\d{10}$/
-    // ^[0-9]{10}$   ,,   ^[2-9]\d{9}$
-    // ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+   
     mobile: {
         type: String,
         trim: true,
@@ -45,7 +38,7 @@ const internSchema = new mongoose.Schema({
     },
 
     collegeId: {
-        type: "ObjectId",
+        type: ObjectId,
         ref: "College",
         trim: true
 

@@ -24,7 +24,7 @@ const createCollege = async function (req, res) {
         let data = req.body
         console.log(Object.keys(data))
         if (Object.keys(data).length == 0) {
-            res.status(400).send({ status: false, msg: "data not found, Please give the data" })      // (400) = {the server cannot or will not process the request due to something that is perceived to be a client error}
+            res.status(400).send({ status: false, msg: "data not found, Please give the data" })
         }
         else {
             const { name, fullName, logoLink } = data;
@@ -89,6 +89,7 @@ const getCollegeDetails = async function (req, res) {
         }
         let collegeName = req.query.name
         if (!collegeName) return res.status(400).send({ status: false, msg: "Please give the college name" })
+        
         if (!isValid(collegeName)) {
             return res.status(400).send({ status: false, msg: "Give the valid college name, College name is not in the list" })
         }

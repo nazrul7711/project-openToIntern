@@ -17,9 +17,9 @@ const isValidObjectid = function(ObjectId){
 const createIntern = async function (req, res) {
     try {
         let data = req.body
-        console.log(Object.keys(data))
+
         if (Object.keys(data).length = 0) {
-            res.status(400).send({ status: false, data: "Bad Request" })      // (400) = {the server cannot or will not process the request due to something that is perceived to be a client error}
+            res.status(400).send({ status: false, data: "Bad Request" }) 
         }
         else 
         {
@@ -77,7 +77,7 @@ const createIntern = async function (req, res) {
                 return res.status(400).send({
                     status: false,
                     msg: "not a valid collegeId"
-                })
+                }) 
             }
                  let savedData = await internModel.create(data)
                 res.status(201).send({ status: true,msg: "Registered successfully for internship ", data: savedData })
